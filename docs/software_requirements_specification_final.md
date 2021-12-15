@@ -104,15 +104,15 @@ Scope: This eCommerce application acts as a template for business that wants to 
 To run and maintain the Website a computer engineer is required. The engineer shall be trained to use the application and basic maintenance operations will be taught. A well-documented pdf that provides a step-by-step description of application usage shall be provided. 
 
 #### The documents shall cover the following topics:
-•	Creating a customer profile and how to set an ideal password.
-•	Adding and Updating the Products.
-•	How to give limited access to specific users like staff and customers.
-•	How to navigate through the web application.
-•	Navigation through the backend and all the essential functions.
-•	How to place an order?
-•	How to add an account to receive payments for the customer purchases.
-•	Different payment modes integration like Debit and Credit Cards.
-•	Periodic maintenance guidelines.
+*	Creating a customer profile and how to set an ideal password.
+*	Adding and Updating the Products.
+*	How to give limited access to specific users like staff and customers.
+*	How to navigate through the web application.
+*	Navigation through the backend and all the essential functions.
+*	How to place an order?
+*	How to add an account to receive payments for the customer purchases.
+*	Different payment modes integration like Debit and Credit Cards.
+*	Periodic maintenance guidelines.
 
 This engineer can be hired by the business entity or can be appointed by our organization (which is recommended) as he/she is vital for the website to function properly. Once the website is up and running. Physical staff can be downsized in the store based on customer traffic. This helps in saving the company money and resources. The website can be easily integrated into the business ecosystem without disruption to the existing business model. The website is easily scalable based on the user traffic which shall reduce the maintenance costs of the website.
 
