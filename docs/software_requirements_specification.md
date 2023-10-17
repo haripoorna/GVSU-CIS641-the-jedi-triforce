@@ -19,7 +19,7 @@ This SRS document is for e-commerse website. It helps guide every involved parti
 # Non-Functional Requirements
 1. 24/7 Availability
    1. The website shall be accessible at all times, 24/7.
-   2. Downtime need be minimal and well-planned for maintenance.
+   2. Downtime shall be minimal and well-planned for maintenance.
 2. Responsive Design
    1. The website shall display correctly on various devices, including desktops, laptops, tablets, and smartphones. 
    2. It shall adapt to different screen sizes and orientations.
