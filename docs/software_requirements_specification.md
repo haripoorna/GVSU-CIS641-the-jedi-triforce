@@ -26,6 +26,6 @@ This SRS document is for e-commerse website. It helps guide every involved parti
 3. User-Friendly Interface
    1. The website shall have an intuitive and easy-to-navigate interface. 
    2. It shall provide a positive user experience, ensuring users can find what they need easily.
-4.Mobile Optimization 
+4. Mobile Optimization 
    1. The website shall optimized for mobile devices and tablets. 
    2. It shall provide a seamless and user-friendly experience on smaller screens.
