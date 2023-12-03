@@ -11,18 +11,18 @@ Members present:
 
 • Pavani Seshadri
 
-Date: 11/27/2023
+Date: 12/01/2023
 
-Time: 05:00PM
+Time: 09:00PM
 
 Discussion points: 
 
 * Rearranged role as leader, developer, tester and documentor. Megha - leader, Hari - developer, Deepicka - Documentor , Pavani - tester 
-* How to use React more easily and basic concept of product details.
-* Css styles to add and solution to technical queries.
+* Test more positive and negative scenario.
+* Discuss queries with Professor and create presenation points.
 
 Goals for next week (include responsibilities)
 
 * Hari and Megha - To create more user friendly website.
 * Deepicka and Pavani - Maintain Team task management in Asana and document small module.
-* Discuss queries with Professor.
+* Work on final deliverables as discussed on the call.
