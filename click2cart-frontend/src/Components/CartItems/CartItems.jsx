@@ -85,12 +85,12 @@ const CartItems = () => {
         {
           return  <div>
                     <div className="cartitems-format">
-                      <img className="cartitems-product-icon" src={e.image} alt="" />
-                      <p cartitems-product-title>{e.name}</p>
-                      <p>${e.new_price}</p>
-                      <button className="cartitems-quatity">{cartItems[e.id]}</button>
-                      <p>${e.new_price*cartItems[e.id]}</p>
-                      <img onClick={()=>{removeFromCart(e.id)}} className="cartitems-remove-icon" src={cross_icon} alt="" />
+                      <img className="cartitems-product-icon" src={e?.image} alt="" />
+                      <p cartitems-product-title>{e?.name}</p>
+                      <p>${e?.new_price}</p>
+                      <button className="cartitems-quatity">{cartItems[e?.id]}</button>
+                      <p>${e?.new_price*cartItems[e?.id]}</p>
+                      <img onClick={()=>{removeFromCart(e?.id)}} className="cartitems-remove-icon" src={cross_icon} alt="" />
                     </div>
                      <hr />
                   </div>;

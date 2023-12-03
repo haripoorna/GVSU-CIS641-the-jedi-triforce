@@ -298,7 +298,7 @@ app.post("/confirmOrder", fetchuser, async (req, res) => {
 
     userData.orders.push(order);
     userData.cartData = {}; // Clear the cart after confirming the order
-
+    console.log("++++userData++++", userData)
     await Users.findOneAndUpdate({_id:req.body.user.userId}, userData);
     //res.send("Added")
     //await userData.save();

@@ -60,13 +60,15 @@ function App() {
           <Route path="/mens" element={<ShopCategory banner={men_banner} category="men" />} />
           <Route path="/womens" element={<ShopCategory banner={women_banner} category="women" />} />
           <Route path="/kids" element={<ShopCategory banner={kid_banner} category="kid" />} />
-          <Route path="/smartphones" element={<ShopCategory category="smartphones" />} /> {/* Add this line */}
-          <Route path="/furniture" element={<ShopCategory category="furniture" />} /> {/* Add this line */}
-          <Route path="/toys" element={<ShopCategory category="toys" />} /> {/* Add this line */}
-          <Route path="/computing" element={<ShopCategory category="computing" />} /> {/* Add this line */}
-          <Route path="/games" element={<ShopCategory category="games" />} /> {/* Add this line */}
+          <Route path="/smartphones" element={<ShopCategory category="smartphones" />} />
+          <Route path="/furniture" element={<ShopCategory category="furniture" />} /> 
+          <Route path="/toys" element={<ShopCategory category="toys" />} />
+          <Route path="/computing" element={<ShopCategory category="computing" />} /> 
+          <Route path="/games" element={<ShopCategory category="games" />} />
+          <Route path="/automotive" element={<ShopCategory category="automotive" />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/orderHistory" element={<OrderHistory />} />
+          
           <Route path="/login" element={<LoginSignup />} />
           {/* Add routes for other categories as needed */}
           <Route path='/product' element={<Product />}>

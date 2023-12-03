@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AddProduct.css";
 import upload_area from "../Assets/upload_area.svg";
 
-const categories = ["men", "women", "kid", "smartphones", "furniture", "toys", "computing", "games"];
+const categories = ["men", "women", "kid", "smartphones", "furniture", "toys", "computing", "games", "automotive"];
 
 const AddProduct = () => {
 
