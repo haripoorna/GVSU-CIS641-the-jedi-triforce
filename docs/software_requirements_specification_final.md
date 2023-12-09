@@ -61,7 +61,45 @@ Below are the requirement based on functional and non-functional category.
 | :-------------: | :----------: |
 
 # Change management plan
-<Description of what this section is>
+A thorough Change Management Plan for integrating E-Commerce application into a customer's business environment is described in this document. To guarantee a seamless and effective implementation, it covers important areas such training, integration with current systems, and problem solving.
+The attached excel sheet is to follow the process while raising change request.
+    ![Alt text](ChangeRequestForm-1.png)
+
+#####Target Audience:
+
+All employees involved in the e-commerce operations, including:
+Customer service representatives
+Inventory managers
+Marketing and sales teams
+Warehouse personnel
+Order fulfillment specialists
+IT personnel responsible for system integration.
+Managers and stakeholders involved in the implementation process.
+
+###Change Management Strategy:
+
+#####Planning and Communication:
+
+•	Start with the town hall to let all employees know about the new system.
+•	Managers must involve the employees and follow the process.
+•	Clearly define new system and its purpose with communication plan that outlines key messages, timelines, and communication channels for informing stakeholders.
+•	Develop accurate to the point training materials specific to user roles and responsibilities.
+•	Keep track of process while handover and shadow on share point based on key points for new system - performance, user requirement satisfaction and maintenance.
+
+#####Training and Shadow Knowledge Transfer:
+•	Define and configure the application according to the integration plan.
+•	Conduct interactive training sessions for users based on their roles and responsibilities.
+•	Motivate the employees to demonstrate how this system is better.
+•	Provide users with support via a variety of channels, including FAQs, technical support, and documentation.
+•	Make smooth handover of system and offer Shadow Knowledge Transfer.
+•	Utilize Shadow Knowledge Transfer phase to monitor system and assist client for hands-on activity of system.
+
+
+#####Evaluation Metrics:
+•	Establish central method to monitor system based on budget, cost reductions, time efficiency, etc.
+•	Involve higher management to show progress and advantages of new system also to prioritize issues based on severity and impact on business operations keep process transparent.
+•	Define a clear escalation process for complex issues requiring technical expertise.
+•	Capture high user adoption rate, driven by reduced process times, increased productivity, decreased support tickets, and positive user feedback, demonstrably validates the success of the implemented change.
 
 
 # Traceability links
