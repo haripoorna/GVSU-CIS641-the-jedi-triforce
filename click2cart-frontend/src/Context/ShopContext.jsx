@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
-
+  
   const [products,setProducts] = useState([]);
   
   const getDefaultCart = () => {
@@ -81,6 +81,14 @@ useEffect(() => {
     return totalItem;
   };
 
+  const clearCart = () => {
+    // debugger
+    debugger
+    setCartItems(getDefaultCart());
+    console.log("cartItems", cartItems)
+  };
+
+
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if(localStorage.getItem("auth-token"))
@@ -117,7 +125,7 @@ useEffect(() => {
     }
   };
 
-  const contextValue = {products, getTotalCartItems, cartItems, addToCart, removeFromCart, getTotalCartAmount };
+  const contextValue = {products, getTotalCartItems, cartItems, addToCart, removeFromCart, getTotalCartAmount, clearCart };
   return (
     <ShopContext.Provider value={contextValue}>
       {props.children}

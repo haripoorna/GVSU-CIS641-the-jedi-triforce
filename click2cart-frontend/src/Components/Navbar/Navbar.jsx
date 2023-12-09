@@ -43,27 +43,35 @@ import '../../Styles/navbar.scss';
 import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import logo from '../Assets/logo.png'
-import cart_icon from '../Assets/cart_icon.png'
+import logo from '../Assets/logo.jpeg'
 import { ShopContext } from '../../Context/ShopContext'
 
 const Navbar = () => {
   let [menu,setMenu] = useState("shop");
   const {getTotalCartItems} = useContext(ShopContext);
   const user = JSON.parse(localStorage.getItem('user'));
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (e) => {
+    console.log("", e)
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <>
-    <div className="container">
+    <div className="container-n">
       <Link to='/' style={{ textDecoration: 'none' }} className="nav-logo">
-          <img src={logo} alt="logo" />         
-          <p>Click2Cart</p>
+          <img style={{ width: '200px' }} src={logo} alt="logo" />         
+          {/* <p>Click2Cart</p> */}
       </Link>
       <label className="open-search" htmlFor="open-search">
         <i className="fas fa-search"></i>
-        <input className="input-open-search" id="open-search" type="checkbox" name="menu" />
+        <input className="input-open-search"
+          id="open-search" type="checkbox" name="menu" />
         <div className="search">
           <button className="button-search"><i className="fas fa-search"></i></button>
-          <input type="text" placeholder="What are you looking for?" className="input-search" />
+          <input type="text" value={searchTerm}
+         onChange={handleSearchChange} placeholder="What are you looking for?" className="input-search" />
         </div>
       </label>
 

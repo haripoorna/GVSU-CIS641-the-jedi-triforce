@@ -6,11 +6,12 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
 
-//Image Storage Engine 
+//Image Storage Engine
 const storage = multer.diskStorage({
     destination: './upload/images',
     filename: (req, file, cb) => {
@@ -29,7 +30,14 @@ app.post("/upload", upload.single('product'), (req, res) => {
     })
 })
 
-mongoose.connect("mongodb+srv://haripoorna:hari2208@cluster0.hjbb0wd.mongodb.net/e-commerce");
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    console.log('MongoDB Connected');
+}).catch(err => {
+    console.error('MongoDB connection error:', err);
+});
 
 // MiddleWare
 const fetchuser = async (req, res, next) => {
@@ -94,6 +102,10 @@ const Product = mongoose.model("Product", {
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String,
     required: true,
@@ -141,11 +153,11 @@ app.post('/login', async (req, res) => {
             }
 			success = true;
       console.log("userId", user.id);
-     
+
       const userData = {
         name: user.name,
         userId: user.id,
-        email: user.email 
+        email: user.email
       }
       console.log("*******", userData)
 			const token = jwt.sign(data, 'secret_ecom');
@@ -184,9 +196,9 @@ app.post('/signup', async (req, res) => {
                 id: user.id
             }
         }
-        
+
         const token = jwt.sign(data, 'secret_ecom');
-        success = true; 
+        success = true;
         res.json({ success, token })
     })
 
@@ -203,12 +215,12 @@ app.get("/newcollections", async (req, res) => {
   res.send(arr);
 });
 
-app.get("/popularinwomen", async (req, res) => {
-	let products = await Product.find({});
-  let arr = products.splice(0,  4);
-  console.log("Popular In Women");
-  res.send(arr);
-});
+// app.get("/popularinwomen", async (req, res) => {
+// 	let products = await Product.find({});
+//   let arr = products.splice(0,  4);
+//   // console.log("Popular In Women");
+//   res.send(arr);
+// });
 
 //Create an endpoint for saving the product in cart
 app.post('/addtocart', fetchuser, async (req, res) => {
@@ -231,13 +243,28 @@ app.post('/removefromcart', fetchuser, async (req, res) => {
     res.send("Removed");
   })
 
+  app.post('/emptyEntireart', fetchuser, async (req, res) => {
+    console.log("Remove Entire Cart");
+      let userData = await Users.findOne({_id:req.user.id});
+      if(userData.cartData){
+        // userData.cartData[req.body.itemId] -= 1;
+        userData.cartData.forEach(item => {
+          if(item !== 0) {
+              item = 0
+          }
+        });
+      }
+      await Users.findOneAndUpdate({_id:req.user.id}, {cartData:userData.cartData});
+      // res.send("");
+      res.send(200).json({});
+    })
+
   //Create an endpoint for saving the product in cart
 app.post('/getcart', fetchuser, async (req, res) => {
   console.log("Get Cart");
   let userData = await Users.findOne({_id:req.user.id});
   res.json(userData.cartData);
-
-  })
+})
 
 
 app.post("/addproduct", async (req, res) => {
@@ -253,6 +280,7 @@ app.post("/addproduct", async (req, res) => {
   const product = new Product({
     id: id,
     name: req.body.name,
+    description: req.body.description,
     image: req.body.image,
     category: req.body.category,
     new_price: req.body.new_price,
@@ -274,8 +302,6 @@ app.post("/removeproduct", async (req, res) => {
 app.post("/confirmOrder", fetchuser, async (req, res) => {
   try {
     const userData = await Users.findOne({ _id: req.body.user.userId });
-    // console.log(userData)
-    // Assuming req.body.cartData is an array of products in the cart
     const order = {
       products: req.body.cartData.map((item) => ({
         productId: item.productId,
@@ -284,11 +310,8 @@ app.post("/confirmOrder", fetchuser, async (req, res) => {
       totalAmount: req.body.totalAmount,
     };
 
-    // Update the isOrdered status for each product in the order
     for (const productOrder of order.products) {
       const product = await Product.findOne({ id: productOrder.productId });
-      console.log("product fetched >>>>>>>>>>>...", product)
-      // Check if the product is found
       if (product) {
         product.available = false;
         product.isOrdered = 1; // Set isOrdered to 1
@@ -297,12 +320,15 @@ app.post("/confirmOrder", fetchuser, async (req, res) => {
     }
 
     userData.orders.push(order);
-    userData.cartData = {}; // Clear the cart after confirming the order
-    console.log("++++userData++++", userData)
+    if(userData.cartData){
+      for(let item in userData.cartData) {
+        console.log(userData.cartData[item])
+        if(userData.cartData[item] != 0) {
+          userData.cartData[item] = 0
+        }
+      }
+    }
     await Users.findOneAndUpdate({_id:req.body.user.userId}, userData);
-    //res.send("Added")
-    //await userData.save();
-
     res.json({ success: true, message: "Order confirmed successfully" });
   } catch (error) {
     res.status(500).json({ success: false, error: "Error confirming the order" });

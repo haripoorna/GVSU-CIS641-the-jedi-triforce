@@ -49,7 +49,7 @@ import women_banner from "./Components/Assets/banner_women.png";
 import men_banner from "./Components/Assets/banner_mens.png";
 import kid_banner from "./Components/Assets/banner_kids.png";
 import LoginSignup from "./Pages/LoginSignup";
-
+import ThankYou from "./Components/thankyou/thankyou";
 function App() {
   return (
     <div>
@@ -68,9 +68,8 @@ function App() {
           <Route path="/automotive" element={<ShopCategory category="automotive" />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/orderHistory" element={<OrderHistory />} />
-          
+          <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/login" element={<LoginSignup />} />
-          {/* Add routes for other categories as needed */}
           <Route path='/product' element={<Product />}>
             <Route path=':productId' element={<Product />} />
           </Route>

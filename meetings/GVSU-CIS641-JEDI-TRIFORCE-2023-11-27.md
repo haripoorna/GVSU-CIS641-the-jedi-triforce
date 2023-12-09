@@ -26,3 +26,4 @@ Goals for next week (include responsibilities)
 * Hari and Megha - To create more user friendly website.
 * Deepicka and Pavani - Maintain Team task management in Asana and document small module.
 * Discuss queries with Professor.
+* Create API for order history, order history and integrate with front-end (Hari)
