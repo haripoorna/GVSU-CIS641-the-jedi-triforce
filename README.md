@@ -27,18 +27,19 @@
 4. Wait for the installation to be completed (requires an internet connection). 
 5. Set up MongoDB as specified in your project's instructions.
 6. Set up MongoDB:
-   a. Open [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
-   b. Sign up on the website.
-   c. Create a new project.
-   d. In the Database section, build a new database.
-   e. Choose M0, your region, and create the database.
-   f. Set up a username and password, and create a user.
-   g. Add IP 0.0.0.0 and click on Add Entry.
-   h. Click on Finish & Close.
-   i. Click on Connect.
-   j. Select the Compass option.
-   k. Copy the connection string.
-   l. Paste it in `index.js`, replacing `<password>` with the password set previously in step 6f.
+   - Open [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+   - Sign up on the website.
+   - Create a new project.
+   - In the Database section, build a new database.
+   - Choose M0, your region, and create the database. 
+   - Set up a username and password, and create a user.
+   - Add IP 0.0.0.0 and click on Add Entry.
+   - Click on Finish & Close.
+   - Click on Connect.
+   - Select the Compass option.
+   - Copy the connection string.
+   - Paste it in `index.js`, line33 replacing process.env.MONGO_URI which we will be created in previous steps. (URL looks like mongodb+srv://username:password@cluster.mongodb.net/database).
+   
 7. To run the project, use `node .\index.js` in the Integrated Terminal. 
 8. To run the backend, type the following command in the terminal and press Enter `node index.js`
 9. The backend server will start and be ready to handle requests.
