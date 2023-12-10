@@ -38,7 +38,7 @@
    - Click on Connect.
    - Select the Compass option.
    - Copy the connection string.
-   - Paste it in `index.js`, line33 replacing process.env.MONGO_URI which we will be created in previous steps. (URL looks like mongodb+srv://username:password@cluster.mongodb.net/database).
+   - Paste it in `index.js`, line33 replacing process.env.MONGO_URI which will be created in previous steps. (URL looks like mongodb+srv://username:password@cluster.mongodb.net/database).
    
 7. To run the project, use `node .\index.js` in the Integrated Terminal. 
 8. To run the backend, type the following command in the terminal and press Enter `node index.js`
