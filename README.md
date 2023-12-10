@@ -1,4 +1,8 @@
 # Team Name : The Jedi Triforce
+
+# Project Documentation
+
+- [Documentation Link](https://haripoorna.github.io/GVSU-CIS641-project-documentation/)
 # Project Setup & Run Instructions
 
 ## Prerequisites
